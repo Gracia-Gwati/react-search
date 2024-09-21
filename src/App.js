@@ -37,11 +37,21 @@ export default function App() {
         <center>
           <p>
             👩‍💻Coded by{" "}
-            <a href="https://github.com/Gracia-Gwati">Gracia Gwati</a>, code
-            hosted on{" "}
-            <a href="https://github.com/Gracia-Gwati/react-search">GitHub</a>{" "}
+            <a href="https://github.com/Gracia-Gwati" target="_blank">
+              Gracia Gwati
+            </a>
+            , code hosted on{" "}
+            <a
+              href="https://github.com/Gracia-Gwati/react-search"
+              target="_blank"
+            >
+              GitHub
+            </a>{" "}
             and is hosted on
-            <a href="https://gracia-react-search-first-attempt.netlify.app/">
+            <a
+              href="https://gracia-react-search-first-attempt.netlify.app/"
+              target="_blank"
+            >
               Netlify
             </a>
             .

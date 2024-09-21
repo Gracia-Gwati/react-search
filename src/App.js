@@ -33,6 +33,21 @@ export default function App() {
       <h4>Weather App</h4>
       <City handleSubmit={handleSubmit} updateCity={setCity} />
       {loaded && <Weather weather={weather} />}
+      <footer>
+        <center>
+          <p>
+            T👩‍💻Coded by{" "}
+            <a href="https://github.com/Gracia-Gwati">Gracia Gwati</a>, code
+            hosted on{" "}
+            <a href="https://github.com/Gracia-Gwati/react-search">GitHub</a>{" "}
+            and is hosted on
+            <a href="https://gracia-react-search-first-attempt.netlify.app/">
+              Netlify
+            </a>
+            .
+          </p>
+        </center>
+      </footer>
     </div>
   );
 }

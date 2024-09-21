@@ -36,7 +36,7 @@ export default function App() {
       <footer>
         <center>
           <p>
-            T👩‍💻Coded by{" "}
+            👩‍💻Coded by{" "}
             <a href="https://github.com/Gracia-Gwati">Gracia Gwati</a>, code
             hosted on{" "}
             <a href="https://github.com/Gracia-Gwati/react-search">GitHub</a>{" "}

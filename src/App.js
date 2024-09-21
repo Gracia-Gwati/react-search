@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from "axios";
+import City from "./City";
+import Weather from "./Weather";
+import "./App.css";
 
-function App() {
+export default function App() {
+  const [city, setCity] = useState("");
+  const [loaded, setLoaded] = useState(false);
+  const [weather, setWeather] = useState(null);
+
+  function showWeather(response) {
+    setLoaded(true);
+    setWeather({
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const apiKey = "203fa770242fcd2b9555d832a88ea567";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(showWeather);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Sky Scout</h1>
+      <h4>Weather App</h4>
+      <City handleSubmit={handleSubmit} updateCity={setCity} />
+      {loaded && <Weather weather={weather} />}
     </div>
   );
 }
-
-export default App;
